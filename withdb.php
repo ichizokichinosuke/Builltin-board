@@ -58,8 +58,8 @@ mysqli_close($link);
     </head>
     <body>
         <form method="post" action="">
-            名前<input type="text" name="name" value="" />
-            コメント<textarea name="comment" cols="20" rows="4"></textarea>
+            名前：<input type="text" name="name" value="" /><br><br>
+            コメント：<textarea name="comment" cols="20" rows="4"></textarea><br>
             <input type="submit" name="send" value="click">
         </form>
         <!-- 書き込まれたデータを表示 -->
@@ -68,7 +68,7 @@ mysqli_close($link);
     if($msg !== "") echo "<p>" . $msg . "</p>";
     if($err_msg !== "") echo '<p style="color:#f00;">' . $err_msg . '</p>';
     foreach($data as $key => $val){
-        echo $val["name"] . " " . $val["comment"] . "<br>";
+        echo $val["name"] . "：" . $val["comment"] . "<br>";
     }
 ?>
     </body>
