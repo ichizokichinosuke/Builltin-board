@@ -55,12 +55,18 @@ mysqli_close($link);
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Add Bootstrap</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
     </head>
     <body>
         <form method="post" action="">
             名前：<input type="text" name="name" value="" /><br><br>
             コメント：<textarea name="comment" cols="20" rows="4"></textarea><br>
-            <input type="submit" name="send" value="click">
+            <!-- <input type="submit" name="send" value="click"> -->
+            <button type="submit" class="btn btn-primary" name="send">Submit</button>
         </form>
         <!-- 書き込まれたデータを表示 -->
 
