@@ -62,15 +62,33 @@ mysqli_close($link);
         <script src="js/bootstrap.min.js"></script>
     </head>
     <body>
-        <form method="post" action="">
-            名前：<input type="text" name="name" value="" /><br><br>
-            コメント：<textarea name="comment" cols="20" rows="4"></textarea><br>
+        <form method="post" action="" class="form-horizontal">
+            <!-- <form class="form-horizontal"> -->
+            <div class="form-group">
+                <label for="inputnName" class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" name="name" class="form-control" id="inputName" placeholder="Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputComment" class="col-sm-2 control-label">Comment</label>
+                <div class="col-sm-10">
+                    <textarea name="comment" class="form-control" id="inputComment"></textarea><br><br>
+                </div>
+            </div>
+            <!-- </form> -->
+            <!-- 名前：<input type="text" name="name" value="" /><br><br> -->
+            <!-- コメント：<textarea name="comment" cols="20" rows="4"></textarea><br> -->
             <!-- <input type="submit" name="send" value="click"> -->
-            <button type="submit" class="btn btn-primary" name="send">Submit</button>
+            <button type="submit" class="btn btn-primary" name="send">Submit</button><br><br>
         </form>
         <!-- 書き込まれたデータを表示 -->
 
+
 <?php
+    // echo "<p>" . $send . "</p>";
+    echo "<p>" . $name . "</p>";
+    echo "<p>" . $comment . "</p>";
     if($msg !== "") echo "<p>" . $msg . "</p>";
     if($err_msg !== "") echo '<p style="color:#f00;">' . $err_msg . '</p>';
     foreach($data as $key => $val){
