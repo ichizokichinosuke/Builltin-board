@@ -87,13 +87,41 @@ mysqli_close($link);
 
 <?php
     // echo "<p>" . $send . "</p>";
-    echo "<p>" . $name . "</p>";
-    echo "<p>" . $comment . "</p>";
+    // echo "<p>" . $name . "</p>";
+    // echo "<p>" . $comment . "</p>";
     if($msg !== "") echo "<p>" . $msg . "</p>";
     if($err_msg !== "") echo '<p style="color:#f00;">' . $err_msg . '</p>';
+?>
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+<?php
     foreach($data as $key => $val){
-        echo $val["name"] . "：" . $val["comment"] . "<br>";
+        // echo $val["name"] . "：" . $val["comment"] . "<br>";
+        echo "<tr>";
+        echo '<th scope="row">';
+        echo $key ;
+        echo "</th>";
+        echo "<td>";
+        echo $val["name"];
+        echo "</td>";
+        echo "<td>";
+        echo $val["comment"];
+        echo "</td>";
+        echo "</tr>";
     }
 ?>
+                </tbody>
+                </table>
+            </div>
+        </div>
     </body>
 </html>
