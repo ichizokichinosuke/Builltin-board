@@ -76,19 +76,12 @@ mysqli_close($link);
                     <textarea name="comment" class="form-control" id="inputComment"></textarea><br><br>
                 </div>
             </div>
-            <!-- </form> -->
-            <!-- 名前：<input type="text" name="name" value="" /><br><br> -->
-            <!-- コメント：<textarea name="comment" cols="20" rows="4"></textarea><br> -->
-            <!-- <input type="submit" name="send" value="click"> -->
             <button type="submit" class="btn btn-primary" name="send">Submit</button><br><br>
         </form>
         <!-- 書き込まれたデータを表示 -->
 
 
 <?php
-    // echo "<p>" . $send . "</p>";
-    // echo "<p>" . $name . "</p>";
-    // echo "<p>" . $comment . "</p>";
     if($msg !== "") echo "<p>" . $msg . "</p>";
     if($err_msg !== "") echo '<p style="color:#f00;">' . $err_msg . '</p>';
 ?>
@@ -105,7 +98,6 @@ mysqli_close($link);
                     <tbody>
 <?php
     foreach($data as $key => $val){
-        // echo $val["name"] . "：" . $val["comment"] . "<br>";
         echo "<tr>";
         echo '<th scope="row">';
         echo $key ;
